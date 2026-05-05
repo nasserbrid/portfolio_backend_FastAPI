@@ -8,7 +8,7 @@ class ProjectBase(BaseModel):
 
 
 class ProjectCreate(ProjectBase):
-    pass
+    image_url: str | None = None
 
 
 class ProjectUpdate(ProjectBase):

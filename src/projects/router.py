@@ -22,10 +22,11 @@ async def create(
     title: str = Form(...),
     description: str = Form(...),
     skills: str = Form(...),
+    image_url: str | None = Form(None),
     image: UploadFile | None = File(None),
     service: ProjectService = Depends(get_project_service),
 ):
-    data = ProjectCreate(title=title, description=description, skills=skills)
+    data = ProjectCreate(title=title, description=description, skills=skills, image_url=image_url)
     return await service.create(data, image)
 
 
